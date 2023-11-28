@@ -9,3 +9,7 @@ ul {
 .card .card-header {
     color: white;
 }
+
+.text-underline {
+    text-decoration: line-through;
+}
