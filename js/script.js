@@ -24,6 +24,7 @@ createApp({
                 }
             ],
             currentIndex: null,
+            newTask: null
 
         }
 
@@ -42,6 +43,14 @@ createApp({
         },
         deleteTask() {
             this.tasks.splice(this.currentIndex, 1)
+        },
+        addTask() {
+            let newObject = {};
+            newObject.text = this.newTask;
+            newObject.done = false;
+
+            this.tasks.push(newObject)
+
         }
     },
     mounted() {

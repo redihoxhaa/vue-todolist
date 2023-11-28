@@ -27,6 +27,15 @@
         <main class="d-flex flex-column align-items-center justify-content-center">
             <div class="container">
 
+                <!-- Area submit task -->
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Your task" aria-label="Your task"
+                        aria-describedby="submit-btn" v-model="newTask" @keyup.enter="addTask">
+                    <button class="btn btn-outline-primary" type="button" id="submit-btn" @click="addTask">Add
+                        task</button>
+                </div>
+                <!-- /Area submit task -->
+
 
                 <!-- Area lista tasks -->
                 <div class="card">
@@ -36,7 +45,8 @@
                     <ul class="listed-items list-group list-group-flush">
                         <li v-for="(element, index) in tasks"
                             class="list-group-item d-flex justify-content-between align-items-center">
-                            <div class="task-text" :class="element.done === true ? 'text-underline' : ''">
+                            <div class="task-text" :class="element.done === true ? 'text-underline' : ''"
+                                @click="checkIfDone(index)">
                                 {{element.text}}</div>
                             <div class="icons d-flex gap-4">
                                 <i class="fa-solid fa-check" role="button" @click="checkIfDone(index)"></i>
