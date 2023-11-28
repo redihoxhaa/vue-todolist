@@ -39,6 +39,9 @@ createApp({
                 this.tasks[this.currentIndex].done = true;
                 return true
             }
+        },
+        deleteTask() {
+            this.tasks.splice(this.currentIndex, 1)
         }
     },
     mounted() {
