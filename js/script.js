@@ -31,14 +31,16 @@ createApp({
     methods: {
         checkIfDone(index) {
 
-            if (this.tasks[index].done === true) {
-                this.tasks[index].done = false
-                return false
-            }
-            else {
-                this.tasks[index].done = true;
-                return true
-            }
+            // if (this.tasks[index].done === true) {
+            //     this.tasks[index].done = false
+            //     return false
+            // }
+            // else {
+            //     this.tasks[index].done = true;
+            //     return true
+            // }
+
+            this.tasks[index].done = !this.tasks[index].done
         },
         deleteTask(index) {
             this.tasks.splice(index, 1)

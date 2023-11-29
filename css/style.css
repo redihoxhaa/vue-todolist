@@ -2,6 +2,10 @@ ul {
     list-style: none;
 }
 
+i {
+    color: grey;
+}
+
 .container {
     width: 70vw;
 }
