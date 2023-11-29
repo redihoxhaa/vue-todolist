@@ -23,7 +23,6 @@ createApp({
                     done: false
                 }
             ],
-            currentIndex: null,
             newTask: null
 
         }
@@ -31,25 +30,27 @@ createApp({
     },
     methods: {
         checkIfDone(index) {
-            this.currentIndex = index;
-            if (this.tasks[this.currentIndex].done === true) {
-                this.tasks[this.currentIndex].done = false
+
+            if (this.tasks[index].done === true) {
+                this.tasks[index].done = false
                 return false
             }
             else {
-                this.tasks[this.currentIndex].done = true;
+                this.tasks[index].done = true;
                 return true
             }
         },
-        deleteTask() {
-            this.tasks.splice(this.currentIndex, 1)
+        deleteTask(index) {
+            this.tasks.splice(index, 1)
         },
         addTask() {
             let newObject = {};
             newObject.text = this.newTask;
             newObject.done = false;
-
-            this.tasks.push(newObject)
+            if (this.newTask.trim() !== '') {
+                this.tasks.push(newObject);
+                this.newTask = null;
+            }
 
         }
     },
